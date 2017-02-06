@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DoF</title>
+</head>
+<body id="app">
+
+  <div>
+    模糊圈：
+    <select v-model="coc" v-on:change="onSelect">
+      <option v-for="type in CoCTypes" v-bind:value="type.value" v-bind:title="type.text">{{ type.text }}</option>
+    </select>
+  </div>
+  <div>
+    距離：<input type="number" v-model="distance">
+  </div>
+  <div>
+    光圈：<input type="number" v-model="f_number">
+  </div>
+  <div>
+    焦距：<input type="number" v-model="focal">
+  </div>
+  <div>景深最近點：{{ nearPoint }}mm</div>
+  <div>景深最遠點：{{ farPoint }}mm</div>
+  <div>景深：{{ dof }}mm</div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js"></script>
+  <script src="main.js"></script>
+
+</body>
+</html>
